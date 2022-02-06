@@ -3,5 +3,5 @@ var down = document.getElementById('doxx');
 
 function query() {
     url.searchParams.append('query', 'ddos');
-    down.innerHTML = url;
+    window.history.replaceState(null, document.title, url) // switch to url kek
 }
