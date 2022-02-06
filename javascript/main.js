@@ -1,6 +1,13 @@
-function ready() {
-    //injecty vejecty fixed no longer leaked?1!
-    let query = new URL(window.location).searchParams.get('query');
-    document.getElementById('myText').textContent = query;
-    document.getElementById('doxx').innerHTML = query;
+data = { 
+    params : {
+        'ishacked': 'true'
+    }
+}
+
+function encodeQuery(){
+    let query = window.location.href
+    for (let d in data.params)
+        query += encodeURIComponent(d) + '='
+                + encodeURIComponent(data.params[d]) + '&';
+    return query.slice(0, -1)
 }
