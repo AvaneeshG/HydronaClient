@@ -1,1 +1,21 @@
-var _0x2c897a=_0x2a4c;(function(_0x1d2cc,_0x4f2b0f){var _0x341438=_0x2a4c,_0x2fc00d=_0x1d2cc();while(!![]){try{var _0x2cd5b1=parseInt(_0x341438(0xb1))/0x1*(-parseInt(_0x341438(0xbd))/0x2)+parseInt(_0x341438(0xb9))/0x3+-parseInt(_0x341438(0xc4))/0x4+parseInt(_0x341438(0xc3))/0x5+parseInt(_0x341438(0xb8))/0x6*(-parseInt(_0x341438(0xb0))/0x7)+parseInt(_0x341438(0xb2))/0x8*(-parseInt(_0x341438(0xb7))/0x9)+parseInt(_0x341438(0xb5))/0xa*(parseInt(_0x341438(0xb3))/0xb);if(_0x2cd5b1===_0x4f2b0f)break;else _0x2fc00d['push'](_0x2fc00d['shift']());}catch(_0x35182c){_0x2fc00d['push'](_0x2fc00d['shift']());}}}(_0x3eb4,0x96294));var url=new URL(window['location'][_0x2c897a(0xbb)]),down=document[_0x2c897a(0xc2)](_0x2c897a(0xbc));function query(){var _0x48b283=_0x2c897a;if(url[_0x48b283(0xb4)]['has'](document['getElementById'](_0x48b283(0xc1))[_0x48b283(0xc0)]))return;url[_0x48b283(0xb4)]['has'](_0x48b283(0xbc))?(url[_0x48b283(0xb4)]['delete'](_0x48b283(0xbc)),url['searchParams'][_0x48b283(0xb6)](_0x48b283(0xbc),document[_0x48b283(0xc2)]('myText')[_0x48b283(0xc0)])):url[_0x48b283(0xb4)][_0x48b283(0xb6)](_0x48b283(0xbc),document[_0x48b283(0xc2)](_0x48b283(0xc1))[_0x48b283(0xc0)]);if(document[_0x48b283(0xc2)](_0x48b283(0xc1))[_0x48b283(0xc0)]==''||document[_0x48b283(0xc2)](_0x48b283(0xc1))[_0x48b283(0xc0)]==null)return url['searchParams'][_0x48b283(0xbf)]('query');down[_0x48b283(0xc5)]=document[_0x48b283(0xc2)]('myText')['value'],window[_0x48b283(0xbe)][_0x48b283(0xba)](null,document['title'],url);}function _0x2a4c(_0x324df7,_0x1bb039){var _0x3eb494=_0x3eb4();return _0x2a4c=function(_0x2a4ce4,_0x21d0b3){_0x2a4ce4=_0x2a4ce4-0xb0;var _0x424669=_0x3eb494[_0x2a4ce4];return _0x424669;},_0x2a4c(_0x324df7,_0x1bb039);}function _0x3eb4(){var _0x49fe9e=['11zdUsvs','searchParams','19796780QyOopG','append','1001817hIyASi','4144290jZxOUk','2908626cEjoUJ','replaceState','href','query','1583818PytGNh','history','delete','value','myText','getElementById','1924805VdbiUH','1829224obPxrZ','innerHTML','7Xlcvoy','1NYXEFU','56jkCnNk'];_0x3eb4=function(){return _0x49fe9e;};return _0x3eb4();}
+var url = new URL(window.location.href)
+var down = document.getElementById('query');
+
+function query() {
+    let str = document.getElementById('myText').value
+    content = str.replace(/</g, "&lt") || str.replace(/>/g, "&gt");
+    if (content == '') return url.searchParams.delete('query');
+    if (url.searchParams.has('query') && url.searchParams.has(content)) return;
+    if (url.searchParams.has('query')) {
+        url.searchParams.delete('query')
+        url.searchParams.append('query', content)
+        window.location.href = url
+    } else {
+        url.searchParams.append('query', content)
+        window.location.href = url;
+    }
+}
+
+setInterval(function () {
+    down.innerHTML = url.searchParams.get('query');
+}, 1000);
