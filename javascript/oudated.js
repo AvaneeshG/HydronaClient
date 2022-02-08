@@ -1,3 +1,22 @@
 // oudated code // Obfuscated
-var _0x29d242=_0x2989;function _0x222d(){var _0x2f09ef=['searchParams','href','702432BeTZZV','514568iCbWNc','getElementById','20JqCvcB','innerHTML','42lrCOEX','append','get','463024MvldpT','1110LHljLu','delete','has','1111586SRGWcd','query','355793UhAJmZ','location','418371fcZcqN','146241FtKzbI','myText'];_0x222d=function(){return _0x2f09ef;};return _0x222d();}(function(_0x1c0983,_0x1e27b9){var _0x19e403=_0x2989,_0xee28d1=_0x1c0983();while(!![]){try{var _0x13ff2c=-parseInt(_0x19e403(0x16b))/0x1+-parseInt(_0x19e403(0x17e))/0x2+parseInt(_0x19e403(0x16d))/0x3+parseInt(_0x19e403(0x173))/0x4*(-parseInt(_0x19e403(0x175))/0x5)+parseInt(_0x19e403(0x172))/0x6+-parseInt(_0x19e403(0x177))/0x7*(parseInt(_0x19e403(0x17a))/0x8)+parseInt(_0x19e403(0x16e))/0x9*(parseInt(_0x19e403(0x17b))/0xa);if(_0x13ff2c===_0x1e27b9)break;else _0xee28d1['push'](_0xee28d1['shift']());}catch(_0x4ed669){_0xee28d1['push'](_0xee28d1['shift']());}}}(_0x222d,0x4601a));function _0x2989(_0x4d1724,_0x4e4b7b){var _0x222da1=_0x222d();return _0x2989=function(_0x298943,_0x6993ac){_0x298943=_0x298943-0x16a;var _0x51b091=_0x222da1[_0x298943];return _0x51b091;},_0x2989(_0x4d1724,_0x4e4b7b);}var url=new URL(window[_0x29d242(0x16c)][_0x29d242(0x171)]),down=document[_0x29d242(0x174)]('query');function query(){var _0x25bc78=_0x29d242;let _0x505291=document[_0x25bc78(0x174)](_0x25bc78(0x16f))['value'];if(content=='')return url['searchParams'][_0x25bc78(0x17c)](_0x25bc78(0x16a));if(url[_0x25bc78(0x170)][_0x25bc78(0x17d)]('query')&&url[_0x25bc78(0x170)][_0x25bc78(0x17d)](content))return;url['searchParams'][_0x25bc78(0x17d)](_0x25bc78(0x16a))?(url['searchParams']['delete'](_0x25bc78(0x16a)),url['searchParams'][_0x25bc78(0x178)](_0x25bc78(0x16a),content),window[_0x25bc78(0x16c)]['href']=url):(url[_0x25bc78(0x170)][_0x25bc78(0x178)](_0x25bc78(0x16a),content),window[_0x25bc78(0x16c)][_0x25bc78(0x171)]=url);}setInterval(function(){var _0x5bb480=_0x29d242;down[_0x5bb480(0x176)]=url[_0x5bb480(0x170)][_0x5bb480(0x179)]('query');},0x3e8);
+var url = new URL(window.location.href)
+var down = document.getElementById('query');
+
+function query() {
+    let content = document.getElementById('myText').value
+    if (content == '') return url.searchParams.delete('query');
+    if (url.searchParams.has('query') && url.searchParams.has(content)) return;
+    if (url.searchParams.has('query')) {
+        url.searchParams.delete('query')
+        url.searchParams.append('query', content)
+        window.location.href = url
+    } else {
+        url.searchParams.append('query', content)
+        window.location.href = url;
+    }
+}
+
+setInterval(function () {
+    down.innerHTML = url.searchParams.get('query');
+}, 1000);
 // outdated code great for trolling
