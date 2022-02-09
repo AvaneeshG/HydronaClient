@@ -1,24 +1,48 @@
-var url = new URL(window.location.href)
-var down = document.getElementById('query');
+var i = 0;
+var txt = 'Welcome To The Offical Website of HydronaClient';
+var speed = 50;
+var intervalId;
 
-function query() {
-    let str = document.getElementById('myText').value
-    content = str.replace(/</g, "&lt") || str.replace(/>/g, "&gt");
-    if (content == '') return url.searchParams.delete('query');
-    if (url.searchParams.has('query') && url.searchParams.has(content)) return;
-    if (url.searchParams.has('query')) {
-        url.searchParams.delete('query')
-        url.searchParams.append('query', content)
-        window.location.href = url
+intervalId = setInterval(function() {
+    if (i < txt.length) {
+        document.getElementById("type-effect").innerHTML += txt.charAt(i);
+        i++;
     } else {
-        url.searchParams.append('query', content)
-        window.location.href = url;
+        clearInterval(intervalId);
     }
-}
+}, speed);
 
-setInterval(function () {
-    down.innerHTML = url.searchParams.get('query');
-}, 1000);
+
+
+
+
+
+
+
+
+
+
+//var url = new URL(window.location.href)
+//var down = document.getElementById('query');
+//
+//function query() {
+//    let str = document.getElementById('myText').value
+//    content = str.replace(/</g, "&lt") || str.replace(/>/g, "&gt");
+//    if (content == '') return url.searchParams.delete('query');
+//    if (url.searchParams.has('query') && url.searchParams.has(content)) return;
+//    if (url.searchParams.has('query')) {
+//        url.searchParams.delete('query')
+//        url.searchParams.append('query', content)
+//        window.location.href = url
+//    } else {
+//        url.searchParams.append('query', content)
+//        window.location.href = url;
+//    }
+//}
+//
+//setInterval(function () {
+//    down.innerHTML = url.searchParams.get('query');
+//}, 1000);
 
 // enjoy and stop trying see my code
 // chupapi~
